@@ -1,6 +1,6 @@
 function removeQuotations(title) {
     debugger;
-    return title.replace(/"|http:\/\/.+\b|\[.+]/g, '')
+    return title.replace(/"|http:\/\/.+\b|\[.+]|<|>/g, '')
 }
 var weibo = {
     share: function(tab, selection, pic) {
