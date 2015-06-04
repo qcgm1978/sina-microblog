@@ -1,7 +1,7 @@
 function removeQuotations(title) {
     debugger;
     var twitterUrl=/\shttp.+?t\.\S+/g
-    return title.replace(/"|http:\/\/.+\b|\[.+]|<|>/g, '').replace(twitterUrl,'')
+    return title.replace(/"|http:\/\/.+?\b|\[.+]|<|>/g, '').replace(twitterUrl,'')
 }
 var weibo = {
     share: function(tab, selection, pic) {
