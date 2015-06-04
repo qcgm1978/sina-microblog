@@ -1,10 +1,11 @@
 function removeQuotations(title) {
     debugger;
-    return title.replace(/"|http:\/\/.+\b|\[.+]|<|>/g, '')
+    var twitterUrl=/\shttp.+?t\.\S+/g
+    return title.replace(/"|http:\/\/.+\b|\[.+]|<|>/g, '').replace(twitterUrl,'')
 }
 var weibo = {
     share: function(tab, selection, pic) {
-        weibo._share(removeQuotations(tab.title), removeQuotations(selection), tab.url, pic);
+        weibo._share(removeQuotations(tab.title), selection?removeQuotations(selection):selection, tab.url, pic);
     },
     _share: function(title, selection, URL, pic) {			
 		var url = 'http://v.t.sina.com.cn/share/share.php?';			
